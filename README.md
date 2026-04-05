@@ -1,50 +1,42 @@
-# Podcast Assets Generator
+# 🎙️ Podcast Assets Generator
 
-Upload a podcast episode and get back everything you need to publish it. Transcription, summary, YouTube title options, YouTube description, and key moments — all in one click. Powered by Voxtral.
+Upload a podcast episode and get back everything you need to publish it. Transcription, summary, YouTube title options, YouTube description, and key moments. Powered by Voxtral.
 
 ---
 
-## What it does
+## ✨ What it does
 
 Podcast Assets Generator is a Streamlit web app that takes an MP3 file and automatically produces:
 
-- **Transcript** — full transcription of the episode, formatted into readable paragraphs
-- **Summary** — a concise 3-5 sentence overview of the episode
-- **YouTube Titles** — 5 compelling title options ready to use
-- **YouTube Description** — a full, keyword-rich description (2-4 paragraphs)
-- **Key Moments** — 8 bullet points highlighting the most important insights
+- 📝 **Transcript** - full transcription of the episode, formatted into readable paragraphs
+- 💡 **Summary** - a concise 3-5 sentence overview of the episode
+- 🎬 **YouTube Titles** - 5 compelling title options ready to use
+- 📄 **YouTube Description** - a full, keyword-rich description (2-4 paragraphs)
+- ⭐ **Key Moments** - 8 bullet points highlighting the most important insights
 
 Everything is displayed in a clean tabbed interface and can be copied directly from the app.
 
 ---
 
-## Motivation
-
-This project was built as a practical way to learn GitHub workflows and build automations around real content production needs. The goal was to create something genuinely useful — not a tutorial toy — while exploring how AI APIs can eliminate the repetitive, time-consuming work of publishing a podcast episode.
-
-It also served as a hands-on introduction to working with speech-to-text models via API, chaining multiple AI calls in a single workflow, and packaging everything as a shareable web app.
-
----
-
-## Tech stack
+## 🛠️ Tech stack
 
 | Component | Choice | Why |
 |---|---|---|
 | UI | [Streamlit](https://streamlit.io) | Fast to build, no frontend code needed |
-| Transcription | Mistral API — `voxtral-mini-2507` | State-of-the-art speech model, free tier, no GPU needed |
-| Asset generation | Mistral API — `mistral-medium-latest` | Strong instruction-following for structured content |
+| Transcription | Mistral API - `voxtral-mini-2507` | State-of-the-art speech model, free tier, no GPU needed |
+| Asset generation | Mistral API - `mistral-medium-latest` | Strong instruction-following for structured content |
 | Env management | python-dotenv | Simple, standard API key handling |
 
-### Why Voxtral?
+### 🔊 Why Voxtral?
 
-Voxtral is Mistral's family of audio understanding models. It is built on top of Mistral's language models with a native audio encoder, which means it does not just transcribe speech — it understands context, handles multiple speakers, and produces clean, accurate output even for technical or domain-specific conversations.
+Voxtral is Mistral's family of audio understanding models. It is built on top of Mistral's language models with a native audio encoder, which means it does not just transcribe speech - it understands context, handles multiple speakers, and produces clean, accurate output even for technical or domain-specific conversations.
 
 **`voxtral-mini-2507`** was chosen because:
 - It is optimised for speed and cost while maintaining high transcription quality
 - It handles long-form audio (tested up to 45 minutes per episode)
 - It is available on Mistral's free tier, making this project essentially free to run
 
-### Why use Voxtral via API instead of locally?
+### ☁️ Why use Voxtral via API instead of locally?
 
 Voxtral is a large multimodal model. Running it locally requires significant hardware:
 
@@ -52,11 +44,11 @@ Voxtral is a large multimodal model. Running it locally requires significant har
 - **Recommended**: 40-80 GB VRAM for comfortable inference (e.g. A100, H100)
 - Setup involves model weights download, CUDA configuration, and dependency management
 
-Running it via the Mistral API offloads all of that. You get the same model quality without any hardware requirements, with no setup beyond an API key. For a tool you run a few times a week to process podcast episodes, the API is the right choice — fast, free (on the free tier), and zero maintenance.
+Running it via the Mistral API offloads all of that. You get the same model quality without any hardware requirements, with no setup beyond an API key. For a tool you run a few times a week to process podcast episodes, the API is the right choice - fast, free (on the free tier), and zero maintenance.
 
 ---
 
-## Running it locally
+## 🚀 Running it locally
 
 ### Prerequisites
 
@@ -104,26 +96,26 @@ Running it via the Mistral API offloads all of that. You get the same model qual
 
    The app will open in your browser at `http://localhost:8501`.
 
-### Cost
+### 💸 Cost
 
 This project runs on Mistral's free tier and costs essentially nothing to use. A typical 45-minute podcast episode requires one transcription call (Voxtral Mini) and two chat calls (formatting + asset generation). All of these fall comfortably within the free tier limits for personal or low-volume use.
 
 ---
 
-## Project structure
+## 📁 Project structure
 
 ```
 podcast-assets-generation/
 ├── app.py              # Main Streamlit application
 ├── requirements.txt    # Python dependencies
-├── .env                # API key (not committed — add your own)
+├── .env                # API key (not committed - add your own)
 ├── .gitignore
 └── LICENSE
 ```
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome. If you have ideas for new assets to generate, improvements to the prompts, or UI enhancements, feel free to open an issue or submit a pull request.
 
@@ -134,8 +126,8 @@ Contributions are welcome. If you have ideas for new assets to generate, improve
 
 ---
 
-## License
+## 📜 License
 
-MIT License — see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.
 
-Copyright (c) 2026 Dr Ana Rojo-Echeburúa
+Copyright (c) 2026 Dr Ana Rojo-Echeburua
